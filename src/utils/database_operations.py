@@ -5,7 +5,7 @@ LOGGER = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, filename="logs/user_log.log")
 
 
-class databaseManipulator:
+class DatabaseManipulator:
     def __init__(self, database: str) -> None:
         LOGGER.info(f"Initializing database: {database}")
         self.database = database
@@ -196,22 +196,22 @@ class databaseManipulator:
 
             conn.commit()
 
-    def temp_function(self, investment_id=None):
-        query = f"""
-            SELECT
-                sa.id,
-                sa.investmentId,
-                sa.remainingShares,
-                sa.saleDate,
-                sa.quantitySold,
-                sa.salePrice
-            FROM assetSalesHistory sa
-        """
+    # def temp_function(self, investment_id=None):
+    #     query = f"""
+    #         SELECT
+    #             sa.id,
+    #             sa.investmentId,
+    #             sa.remainingShares,
+    #             sa.saleDate,
+    #             sa.quantitySold,
+    #             sa.salePrice
+    #         FROM assetSalesHistory sa
+    #     """
 
-        if investment_id is not None:
-            query += f" WHERE ai.id = {investment_id}"
+    #     if investment_id is not None:
+    #         query += f" WHERE ai.id = {investment_id}"
 
-        with sqlite3.connect(self.database) as conn:
-            cursor = conn.cursor()
-            cursor.execute(query)
-            return cursor.fetchall()
+    #     with sqlite3.connect(self.database) as conn:
+    #         cursor = conn.cursor()
+    #         cursor.execute(query)
+    #         return cursor.fetchall()
