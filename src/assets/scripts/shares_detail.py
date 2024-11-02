@@ -1,6 +1,7 @@
 import logging
 
 from datetime import datetime, timedelta
+
 from src.assets.scripts.asset_ticker import AssetTicker
 
 LOGGER = logging.getLogger(__name__)
