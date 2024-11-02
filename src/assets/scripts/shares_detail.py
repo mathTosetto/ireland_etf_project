@@ -1,7 +1,7 @@
 import logging
 
-from src.assets.scripts.asset_ticker import AssetTicker
 from datetime import datetime, timedelta
+from src.assets.scripts.asset_ticker import AssetTicker
 
 LOGGER = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, filename="logs/user_log.log")
