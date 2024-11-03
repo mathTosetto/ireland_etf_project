@@ -130,14 +130,14 @@ def app(database_manipulator: DatabaseManipulator):
     # st.dataframe(y, hide_index=True)
 
     if investments:
-        df = load_data(investments=investments)
-        LOGGER.info(f"df: {df.columns}")
+        # df = load_data(investments=investments)
+        # LOGGER.info(f"df: {df.columns}")
 
-        st.title("Investment Portfolio")
-        st.write("### Investment Details")
-        st.dataframe(df, hide_index=True)
+        # st.title("Investment Portfolio")
+        # st.write("### Investment Details")
+        # st.dataframe(df, hide_index=True)
 
-        st.divider()
+        # st.divider()
 
         investments = database_manipulator.fetch_investments()
         investment_ids = [investment[0] for investment in investments]
