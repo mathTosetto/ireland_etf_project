@@ -4,7 +4,7 @@ import streamlit as st
 
 from src.assets.scripts.asset_ticker import AssetTicker
 from src.assets.scripts.shares_detail import SharesDetail
-from src.utils.database_operations import databaseManipulator
+from src.utils.database_operations import DatabaseManipulator
 
 
 LOGGER = logging.getLogger(__name__)
@@ -114,7 +114,7 @@ def load_data(investments: list) -> pd.DataFrame:
 #     return pd.DataFrame(investment_data)
 
 
-def app(database_manipulator: databaseManipulator):
+def app(database_manipulator: DatabaseManipulator):
     investments = database_manipulator.fetch_investments()
 
     if st.button("Truncate Investments Table"):

@@ -3,12 +3,12 @@ import pandas as pd
 import yfinance as yf
 import streamlit as st
 
-from src.utils.database_operations import databaseManipulator
+from src.utils.database_operations import DatabaseManipulator
 
 LOGGER = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, filename="logs/user_log.log")
 
-def app(database_manipulator: databaseManipulator):
+def app(database_manipulator: DatabaseManipulator):
 
     st.title("Investment Tracker")
 

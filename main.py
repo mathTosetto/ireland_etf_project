@@ -1,6 +1,6 @@
 import streamlit as st
 
-from src.utils.database_operations import databaseManipulator
+from src.utils.database_operations import DatabaseManipulator
 from src.pages import home, investment_rules, insert_form, view_investments
 
 PAGES = {
@@ -12,10 +12,10 @@ PAGES = {
 
 
 def init_db(database_name: str) -> None:
-    return databaseManipulator(database_name)
+    return DatabaseManipulator(database_name)
 
 
-def main(database_manipulator: databaseManipulator):
+def main(database_manipulator: DatabaseManipulator):
     st.sidebar.title("Pages")
     selection = st.sidebar.radio("Navigate", list(PAGES.keys()))
     page = PAGES[selection]

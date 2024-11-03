@@ -1,10 +1,10 @@
 import pandas as pd
 import streamlit as st
 
-from src.utils.database_operations import databaseManipulator
+from src.utils.database_operations import DatabaseManipulator
 
 
-def app(database_manipulator: databaseManipulator):
+def app(database_manipulator: DatabaseManipulator):
     data = {
         "Rule": [
             "Exit Tax Rate",
